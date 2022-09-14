@@ -1,6 +1,6 @@
 from person import Person
 
-p1 = Person('John', 40)
+p1 = Person(name='John', age=40)
 p2 = Person('Mary', 35)
 
 # p1.name = 'John'
@@ -15,16 +15,23 @@ import rpg
 
 conan = rpg.Character('Conan','Human')
 galadriel = rpg.Mage('Galadriel', 'Elf')
-galadriel.purse.set(10, 5, 1)
+galadriel.purse.add(10, 5, 1)
 grok = rpg.Character('Grok', 'Orc', health=130)
 chest = rpg.Chest(['longsword', 'iron helmet'], 2, 50, 25)
 
-galadriel.battle(grok)
+# conan.battle(galadriel)
+# galadriel.battle(grok)
+
+# galadriel.purse__gold = 2000
 
 print(conan.__dict__)
-print(galadriel.__dict__)
 
-# chest.loot(galadriel)
+galadriel.purse.value = (20, 10, 5)
+g, s, c = galadriel.purse.value
+print(f'{galadriel.name} has {g} gold. ')
+
+
+chest.loot(galadriel)
 
 # print(chest.__dict__)
 # print(galadriel.__dict__)
