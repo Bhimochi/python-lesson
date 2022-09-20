@@ -24,7 +24,8 @@ def get_username():
     return name
 
 
-while True:
+def main():
+    while True:
         try:
             x = get_int()
             print(1 / x)
@@ -36,5 +37,9 @@ while True:
         except ZeroDivisionError:
             print('Input cannot be zero')
    
-print(f'You entered {x}')
+    print(f'You entered {x}')
 
+
+
+if __name__ == '__main__':
+    main()
