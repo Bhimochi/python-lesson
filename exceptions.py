@@ -9,7 +9,7 @@ class InvalidUserError(Exception):
 
 def get_int():
     val = int(input('Enter an integer: '))
-    if not val in range(1, 10):
+    if not val in range(1, 11):
         raise RangeError(f'{val} is out of range - must be between 1 and 10')
     
     return val
