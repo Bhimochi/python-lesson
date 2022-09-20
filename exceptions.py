@@ -1,15 +1,15 @@
 class RangeError(Exception):
     pass
 
-
 class InvalidUserError(Exception):
     def __init__(self, name):
-        super().__init__(f'{name} is not a valid usernmame')
+        super().__init__(f'{name} is not a valid username')
+
 
 
 def get_int():
     val = int(input('Enter an integer: '))
-    if not val in range(1, 11):
+    if not val in range(1, 10):
         raise RangeError(f'{val} is out of range - must be between 1 and 10')
     
     return val
@@ -22,21 +22,19 @@ def get_username():
         raise InvalidUserError(name)
 
     return name
-    
-        
-while True:
-    try:
-        x = int(input('Enter an integer: '))
-        print(1 / x)
-        break
-    except ValueError as err:
-        print('Input must be an integer')
-    except ZeroDivisionError:
-        print('Input cannot be zero')
-    else:
-        print('else reached')
-        break
-    finally: 
-        print('finally reached')
 
+
+while True:
+        try:
+            x = get_int()
+            print(1 / x)
+            break
+        except RangeError as err:
+            print(err)
+        except ValueError:    
+            print('Input must be an integer')
+        except ZeroDivisionError:
+            print('Input cannot be zero')
+   
 print(f'You entered {x}')
+
