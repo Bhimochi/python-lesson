@@ -1,3 +1,29 @@
+class RangeError(Exception):
+    pass
+
+
+class InvalidUserError(Exception):
+    def __init__(self, name):
+        super().__init__(f'{name} is not a valid usernmame')
+
+
+def get_int():
+    val = int(input('Enter an integer: '))
+    if not val in range(1, 11):
+        raise RangeError(f'{val} is out of range - must be between 1 and 10')
+    
+    return val
+
+
+def get_username():
+    valid_users = ['alice', 'toby']
+    name = input('Username')
+    if not name in valid_users:
+        raise InvalidUserError(name)
+
+    return name
+    
+        
 while True:
     try:
         x = int(input('Enter an integer: '))

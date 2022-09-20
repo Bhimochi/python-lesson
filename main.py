@@ -43,4 +43,3 @@ print(rpg.Character.is_valid_race('Troll'))
 # print(chest.cash)
 # print(f'{galadriel.name} has {galadriel.purse} in her pocket.')
 
-
